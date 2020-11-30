@@ -144,9 +144,17 @@ extension NetworkManager {
         taskWithCoinListURL.resume()
     }
     
-    static func requestCoinChartData (compeltion:@escaping (Result<[ChartData], Error>) -> Void) {
+    static func requestCoinChartData (coinType: CoinType, period: Period, compeltion:@escaping (Result<[ChartData], Error>) -> Void) {
         
-        let param: RequestParam = .url(["fsym" : "BTC", "tsym":"USD","limit":"24"])
+        let param: RequestParam =
+//            .url(["fsym" : "BTC", "tsym":"USD","limit":"24"])
+            .url(["fsym" : "\(coinType.rawValue)",
+                  "tsym" : "USD",
+                  "limit": "\(period.limitParameter)",
+                  "aggregate" : "\(period.aggregateParameter)"
+                    ])
+        
+        
         guard let CoinChartURL = CoinChartDataRequest(period: .day, param: param).urlRequest().url else { return }
 
         let taskWithCoinChartURL = session.dataTask(with: CoinChartURL){ (data, response, error) in
