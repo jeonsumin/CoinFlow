@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0C053625752E0500B0638B /* ChartListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C053525752E0500B0638B /* ChartListCell.swift */; };
 		DE113BFC2568B7EE0083AFCC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113BFB2568B7EE0083AFCC /* Article.swift */; };
 		DE113C012568B7F50083AFCC /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113C002568B7F50083AFCC /* ChartData.swift */; };
 		DE113C062568B7FB0083AFCC /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113C052568B7FB0083AFCC /* CoinData.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE0C053525752E0500B0638B /* ChartListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListCell.swift; sourceTree = "<group>"; };
 		DE113BFB2568B7EE0083AFCC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DE113C002568B7F50083AFCC /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		DE113C052568B7FB0083AFCC /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				DEBCEE2B25597064005ADB87 /* Chart.storyboard */,
 				DE5CA1C52556497B00C32616 /* ChartListViewController.swift */,
+				DE0C053525752E0500B0638B /* ChartListCell.swift */,
 				DE5CA1DD25564A0000C32616 /* ChartDetailViewController.swift */,
 			);
 			path = Chart;
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0C053625752E0500B0638B /* ChartListCell.swift in Sources */,
 				DE5CA1DE25564A0000C32616 /* ChartDetailViewController.swift in Sources */,
 				DE75EAC0256D3542008D155F /* Request.swift in Sources */,
 				DEC87D402562A040000FD5BE /* UIColor.swift in Sources */,

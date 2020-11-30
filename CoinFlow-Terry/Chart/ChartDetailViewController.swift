@@ -9,21 +9,24 @@ import UIKit
 
 class ChartDetailViewController: UIViewController {
 
+    var coinInfo : CoinInfo!
+    
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        NetworkManager.requestCoinChartData { result in
+            switch result {
+            case .success(let coinChart):
+                print("--> coin Chart data Count ::: \(coinChart.count)")
+            case .failure(let err):
+                print("--> err::: \(err.localizedDescription)")
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("넘어온 데이터 ::: \(coinInfo.key)")
     }
-    */
-
 }
