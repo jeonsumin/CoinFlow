@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 typealias coinChartInfo = (key: Period, value: [ChartData])
 class ChartDetailViewController: UIViewController {

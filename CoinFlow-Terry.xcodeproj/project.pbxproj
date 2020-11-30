@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85FF207EBD01803580BACB8D /* Pods_CoinFlow_Terry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCCA543C6854BE8012A3F3A /* Pods_CoinFlow_Terry.framework */; };
+		B027B02F11A6B73F3BFE17AE /* Pods_CoinFlow_Terry_CoinFlow_TerryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D608D68B5DFD5C786340A4A /* Pods_CoinFlow_Terry_CoinFlow_TerryUITests.framework */; };
+		B0846806F4B659AA46201DA4 /* Pods_CoinFlow_TerryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC0197D69E294E1B419A845 /* Pods_CoinFlow_TerryTests.framework */; };
 		DE0C053625752E0500B0638B /* ChartListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C053525752E0500B0638B /* ChartListCell.swift */; };
 		DE113BFC2568B7EE0083AFCC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113BFB2568B7EE0083AFCC /* Article.swift */; };
 		DE113C012568B7F50083AFCC /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113C002568B7F50083AFCC /* ChartData.swift */; };
@@ -53,6 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01B6FE32BCA6EE64F6560251 /* Pods-CoinFlow-Terry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlow-Terry.debug.xcconfig"; path = "Target Support Files/Pods-CoinFlow-Terry/Pods-CoinFlow-Terry.debug.xcconfig"; sourceTree = "<group>"; };
+		0973A1B376CB5387F1805F00 /* Pods-CoinFlow-Terry-CoinFlow-TerryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlow-Terry-CoinFlow-TerryUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoinFlow-Terry-CoinFlow-TerryUITests/Pods-CoinFlow-Terry-CoinFlow-TerryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4D608D68B5DFD5C786340A4A /* Pods_CoinFlow_Terry_CoinFlow_TerryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinFlow_Terry_CoinFlow_TerryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F5A3B4BC63A29A86D426F8B /* Pods-CoinFlow-TerryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlow-TerryTests.debug.xcconfig"; path = "Target Support Files/Pods-CoinFlow-TerryTests/Pods-CoinFlow-TerryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9398E97FA7BDDC8CA490D1B6 /* Pods-CoinFlow-Terry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlow-Terry.release.xcconfig"; path = "Target Support Files/Pods-CoinFlow-Terry/Pods-CoinFlow-Terry.release.xcconfig"; sourceTree = "<group>"; };
+		AAC0197D69E294E1B419A845 /* Pods_CoinFlow_TerryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinFlow_TerryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC3A8BE0CC0787C39A4D03C9 /* Pods-CoinFlow-Terry-CoinFlow-TerryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlow-Terry-CoinFlow-TerryUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinFlow-Terry-CoinFlow-TerryUITests/Pods-CoinFlow-Terry-CoinFlow-TerryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DDECF372BDF3176E9BF77087 /* Pods-CoinFlow-TerryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlow-TerryTests.release.xcconfig"; path = "Target Support Files/Pods-CoinFlow-TerryTests/Pods-CoinFlow-TerryTests.release.xcconfig"; sourceTree = "<group>"; };
 		DE0C053525752E0500B0638B /* ChartListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListCell.swift; sourceTree = "<group>"; };
 		DE113BFB2568B7EE0083AFCC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DE113C002568B7F50083AFCC /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
@@ -85,6 +96,7 @@
 		DEBCEE312559707D005ADB87 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = News.storyboard; path = "CoinFlow-Terry/News/News.storyboard"; sourceTree = SOURCE_ROOT; };
 		DEBCEE3725597091005ADB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
 		DEC87D3F2562A040000FD5BE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		EFCCA543C6854BE8012A3F3A /* Pods_CoinFlow_Terry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinFlow_Terry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FF207EBD01803580BACB8D /* Pods_CoinFlow_Terry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0846806F4B659AA46201DA4 /* Pods_CoinFlow_TerryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +120,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B027B02F11A6B73F3BFE17AE /* Pods_CoinFlow_Terry_CoinFlow_TerryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6311D2C9A83B556D69F1FAD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFCCA543C6854BE8012A3F3A /* Pods_CoinFlow_Terry.framework */,
+				4D608D68B5DFD5C786340A4A /* Pods_CoinFlow_Terry_CoinFlow_TerryUITests.framework */,
+				AAC0197D69E294E1B419A845 /* Pods_CoinFlow_TerryTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE113C0A2568B8040083AFCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +168,8 @@
 				DE5CA1A82556483D00C32616 /* CoinFlow-TerryTests */,
 				DE5CA1B32556483D00C32616 /* CoinFlow-TerryUITests */,
 				DE5CA1902556483D00C32616 /* Products */,
+				E5D1DE75696586535E541641 /* Pods */,
+				6311D2C9A83B556D69F1FAD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +257,20 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		E5D1DE75696586535E541641 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01B6FE32BCA6EE64F6560251 /* Pods-CoinFlow-Terry.debug.xcconfig */,
+				9398E97FA7BDDC8CA490D1B6 /* Pods-CoinFlow-Terry.release.xcconfig */,
+				0973A1B376CB5387F1805F00 /* Pods-CoinFlow-Terry-CoinFlow-TerryUITests.debug.xcconfig */,
+				AC3A8BE0CC0787C39A4D03C9 /* Pods-CoinFlow-Terry-CoinFlow-TerryUITests.release.xcconfig */,
+				6F5A3B4BC63A29A86D426F8B /* Pods-CoinFlow-TerryTests.debug.xcconfig */,
+				DDECF372BDF3176E9BF77087 /* Pods-CoinFlow-TerryTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5CA1B92556483D00C32616 /* Build configuration list for PBXNativeTarget "CoinFlow-Terry" */;
 			buildPhases = (
+				72547F1DCDAFECC047289AD3 /* [CP] Check Pods Manifest.lock */,
 				DE5CA18B2556483D00C32616 /* Sources */,
 				DE5CA18C2556483D00C32616 /* Frameworks */,
 				DE5CA18D2556483D00C32616 /* Resources */,
+				8526215A267EA621257FE9EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +297,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5CA1BC2556483D00C32616 /* Build configuration list for PBXNativeTarget "CoinFlow-TerryTests" */;
 			buildPhases = (
+				35039183F1518E2D1E0BB764 /* [CP] Check Pods Manifest.lock */,
 				DE5CA1A12556483D00C32616 /* Sources */,
 				DE5CA1A22556483D00C32616 /* Frameworks */,
 				DE5CA1A32556483D00C32616 /* Resources */,
@@ -272,9 +316,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE5CA1BF2556483D00C32616 /* Build configuration list for PBXNativeTarget "CoinFlow-TerryUITests" */;
 			buildPhases = (
+				4669BDF0ABBDC58D720870FB /* [CP] Check Pods Manifest.lock */,
 				DE5CA1AC2556483D00C32616 /* Sources */,
 				DE5CA1AD2556483D00C32616 /* Frameworks */,
 				DE5CA1AE2556483D00C32616 /* Resources */,
+				5F7386C674B87969366F637C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,6 +403,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35039183F1518E2D1E0BB764 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinFlow-TerryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4669BDF0ABBDC58D720870FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinFlow-Terry-CoinFlow-TerryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F7386C674B87969366F637C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinFlow-Terry-CoinFlow-TerryUITests/Pods-CoinFlow-Terry-CoinFlow-TerryUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinFlow-Terry-CoinFlow-TerryUITests/Pods-CoinFlow-Terry-CoinFlow-TerryUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinFlow-Terry-CoinFlow-TerryUITests/Pods-CoinFlow-Terry-CoinFlow-TerryUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72547F1DCDAFECC047289AD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinFlow-Terry-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8526215A267EA621257FE9EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinFlow-Terry/Pods-CoinFlow-Terry-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinFlow-Terry/Pods-CoinFlow-Terry-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinFlow-Terry/Pods-CoinFlow-Terry-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE5CA18B2556483D00C32616 /* Sources */ = {
@@ -569,6 +718,7 @@
 		};
 		DE5CA1BA2556483D00C32616 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B6FE32BCA6EE64F6560251 /* Pods-CoinFlow-Terry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -588,6 +738,7 @@
 		};
 		DE5CA1BB2556483D00C32616 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9398E97FA7BDDC8CA490D1B6 /* Pods-CoinFlow-Terry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -607,6 +758,7 @@
 		};
 		DE5CA1BD2556483D00C32616 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F5A3B4BC63A29A86D426F8B /* Pods-CoinFlow-TerryTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -629,6 +781,7 @@
 		};
 		DE5CA1BE2556483D00C32616 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDECF372BDF3176E9BF77087 /* Pods-CoinFlow-TerryTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -651,6 +804,7 @@
 		};
 		DE5CA1C02556483D00C32616 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0973A1B376CB5387F1805F00 /* Pods-CoinFlow-Terry-CoinFlow-TerryUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -671,6 +825,7 @@
 		};
 		DE5CA1C12556483D00C32616 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC3A8BE0CC0787C39A4D03C9 /* Pods-CoinFlow-Terry-CoinFlow-TerryUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
