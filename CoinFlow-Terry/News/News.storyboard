@@ -16,21 +16,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7tm-k3-J1p">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7tm-k3-J1p">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsListCell" id="8TM-jV-SKZ" customClass="newsListCell" customModule="CoinFlow_Terry" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="newsListCell" rowHeight="100" id="8TM-jV-SKZ" customClass="newsListCell" customModule="CoinFlow_Terry" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8TM-jV-SKZ" id="4H8-gR-uY9">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bp9-QQ-9qg">
+                                                    <rect key="frame" x="20" y="10" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="8cS-mw-QfB"/>
+                                                        <constraint firstAttribute="width" constant="80" id="ChS-TO-Flq"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, world, 2nd line 3rd line ... " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3g-lV-LnT">
+                                                    <rect key="frame" x="110" y="10" width="85" height="50.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17 Nov 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMN-yl-CLh">
+                                                    <rect key="frame" x="110" y="74" width="73" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Y3g-lV-LnT" firstAttribute="leading" secondItem="bp9-QQ-9qg" secondAttribute="trailing" constant="10" id="Brf-2Z-Qjv"/>
+                                                <constraint firstItem="Y3g-lV-LnT" firstAttribute="top" secondItem="bp9-QQ-9qg" secondAttribute="top" id="Ccz-eP-Ytx"/>
+                                                <constraint firstItem="eMN-yl-CLh" firstAttribute="leading" secondItem="bp9-QQ-9qg" secondAttribute="trailing" constant="10" id="Egr-Pm-tND"/>
+                                                <constraint firstItem="bp9-QQ-9qg" firstAttribute="centerY" secondItem="4H8-gR-uY9" secondAttribute="centerY" id="LPX-5k-rbs"/>
+                                                <constraint firstItem="eMN-yl-CLh" firstAttribute="bottom" secondItem="bp9-QQ-9qg" secondAttribute="bottom" id="ZfU-Mg-wSK"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y3g-lV-LnT" secondAttribute="trailing" constant="30" id="oSD-Iq-S0q"/>
+                                                <constraint firstItem="bp9-QQ-9qg" firstAttribute="leading" secondItem="4H8-gR-uY9" secondAttribute="leading" constant="20" symbolic="YES" id="sWi-Jb-WMt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsDate" destination="eMN-yl-CLh" id="NiS-CJ-xDs"/>
+                                            <outlet property="newsTitle" destination="Y3g-lV-LnT" id="2ZT-jv-djg"/>
+                                            <outlet property="thumbnail" destination="bp9-QQ-9qg" id="HLO-On-gCq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="gnL-cp-hrc" id="Hpp-2F-ZzM"/>
+                                    <outlet property="delegate" destination="gnL-cp-hrc" id="Mma-bJ-AX3"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -44,10 +80,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="ktw-aC-sOQ"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="7tm-k3-J1p" id="gtX-mR-zr0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SX7-53-GUs" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="1647"/>
+            <point key="canvasLocation" x="140.57971014492756" y="1646.6517857142856"/>
         </scene>
         <!--News-->
         <scene sceneID="qAH-i9-3sF">
@@ -73,6 +112,9 @@
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

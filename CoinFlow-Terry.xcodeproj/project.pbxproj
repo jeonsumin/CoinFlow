@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,10 @@
 		DE75EACA256D3AC0008D155F /* CoinChartDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75EAC9256D3AC0008D155F /* CoinChartDataRequest.swift */; };
 		DE75EACF256D3D2D008D155F /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75EACE256D3D2D008D155F /* Period.swift */; };
 		DE75EAD4256D3F31008D155F /* newsListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75EAD3256D3F31008D155F /* newsListRequest.swift */; };
+		DE96F9E6257C93EA00060B2B /* ChartXAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F9E5257C93EA00060B2B /* ChartXAxisValueFormatter.swift */; };
+		DE96F9F3257CA8BA00060B2B /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F9F2257CA8BA00060B2B /* NewsListViewModel.swift */; };
+		DE96F9F8257CA8C400060B2B /* NewsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F9F7257CA8C400060B2B /* NewsListCell.swift */; };
+		DE96FA05257CB35800060B2B /* ChartDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96FA04257CB35800060B2B /* ChartDetailViewModel.swift */; };
 		DEBCEE2D25597064005ADB87 /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBCEE2B25597064005ADB87 /* Chart.storyboard */; };
 		DEBCEE322559707D005ADB87 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBCEE312559707D005ADB87 /* News.storyboard */; };
 		DEBCEE3825597091005ADB87 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBCEE3625597091005ADB87 /* Setting.storyboard */; };
@@ -92,6 +96,10 @@
 		DE75EAC9256D3AC0008D155F /* CoinChartDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinChartDataRequest.swift; sourceTree = "<group>"; };
 		DE75EACE256D3D2D008D155F /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		DE75EAD3256D3F31008D155F /* newsListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsListRequest.swift; sourceTree = "<group>"; };
+		DE96F9E5257C93EA00060B2B /* ChartXAxisValueFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChartXAxisValueFormatter.swift; path = "../../../../../../../../Downloads/Coinflow-Jason_2/Coinflow-Jason/Chart/ChartXAxisValueFormatter.swift"; sourceTree = "<group>"; };
+		DE96F9F2257CA8BA00060B2B /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		DE96F9F7257CA8C400060B2B /* NewsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCell.swift; sourceTree = "<group>"; };
+		DE96FA04257CB35800060B2B /* ChartDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDetailViewModel.swift; sourceTree = "<group>"; };
 		DEBCEE2C25597064005ADB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chart.storyboard; sourceTree = "<group>"; };
 		DEBCEE312559707D005ADB87 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = News.storyboard; path = "CoinFlow-Terry/News/News.storyboard"; sourceTree = SOURCE_ROOT; };
 		DEBCEE3725597091005ADB87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Setting.storyboard; sourceTree = "<group>"; };
@@ -227,6 +235,8 @@
 				DE5CA1C52556497B00C32616 /* ChartListViewController.swift */,
 				DE0C053525752E0500B0638B /* ChartListCell.swift */,
 				DE5CA1DD25564A0000C32616 /* ChartDetailViewController.swift */,
+				DE96FA04257CB35800060B2B /* ChartDetailViewModel.swift */,
+				DE96F9E5257C93EA00060B2B /* ChartXAxisValueFormatter.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -236,6 +246,8 @@
 			children = (
 				DEBCEE312559707D005ADB87 /* News.storyboard */,
 				DE5CA1CA2556499100C32616 /* NewsViewController.swift */,
+				DE96F9F2257CA8BA00060B2B /* NewsListViewModel.swift */,
+				DE96F9F7257CA8C400060B2B /* NewsListCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -267,7 +279,6 @@
 				6F5A3B4BC63A29A86D426F8B /* Pods-CoinFlow-TerryTests.debug.xcconfig */,
 				DDECF372BDF3176E9BF77087 /* Pods-CoinFlow-TerryTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -512,12 +523,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE96F9E6257C93EA00060B2B /* ChartXAxisValueFormatter.swift in Sources */,
 				DE0C053625752E0500B0638B /* ChartListCell.swift in Sources */,
 				DE5CA1DE25564A0000C32616 /* ChartDetailViewController.swift in Sources */,
+				DE96F9F8257CA8C400060B2B /* NewsListCell.swift in Sources */,
 				DE75EAC0256D3542008D155F /* Request.swift in Sources */,
 				DEC87D402562A040000FD5BE /* UIColor.swift in Sources */,
 				DE113C062568B7FB0083AFCC /* CoinData.swift in Sources */,
 				DE5CA1C62556497B00C32616 /* ChartListViewController.swift in Sources */,
+				DE96F9F3257CA8BA00060B2B /* NewsListViewModel.swift in Sources */,
 				DE75EACA256D3AC0008D155F /* CoinChartDataRequest.swift in Sources */,
 				DE113C0F2568B8C80083AFCC /* NetworkManager.swift in Sources */,
 				DE5CA1932556483D00C32616 /* AppDelegate.swift in Sources */,
@@ -527,6 +541,7 @@
 				DE113BFC2568B7EE0083AFCC /* Article.swift in Sources */,
 				DE75EAD4256D3F31008D155F /* newsListRequest.swift in Sources */,
 				DE5CA1CB2556499100C32616 /* NewsViewController.swift in Sources */,
+				DE96FA05257CB35800060B2B /* ChartDetailViewModel.swift in Sources */,
 				DE5CA1952556483D00C32616 /* SceneDelegate.swift in Sources */,
 				DE75EAC5256D3942008D155F /* CoinListRequest.swift in Sources */,
 				DE5CA1D0255649A500C32616 /* SettingViewController.swift in Sources */,

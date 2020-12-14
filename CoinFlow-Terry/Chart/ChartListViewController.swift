@@ -10,12 +10,12 @@ import UIKit
 typealias CoinInfo = (key: CoinType, value: Coin)
 
 class ChartListViewController: UIViewController {
-
+    
     @IBOutlet weak var chartCollectionView: UICollectionView!
     @IBOutlet weak var chartTableView: UITableView!
     @IBOutlet weak var chartTableViewHeight: NSLayoutConstraint!
     
-//    var coinInfoList: [(key:CoinType, value: Coin)] = [] 이렇게도 사용할 수 있지만 Typealias를 사용하여 타입을 지정 하여 사용
+    //    var coinInfoList: [(key:CoinType, value: Coin)] = [] 이렇게도 사용할 수 있지만 Typealias를 사용하여 타입을 지정 하여 사용
     var coinInfoList: [CoinInfo] = [] {
         didSet{
             // coinInfoList 가 세팅이 되었을때 -> tableView reload()
@@ -26,7 +26,7 @@ class ChartListViewController: UIViewController {
         }
     }
     
-//MARK:- LifeCycle
+    //MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -34,8 +34,7 @@ class ChartListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.requestChartList { result in
-
+        NetworkManager.requestChartList { (result: Result<[Coin], Error>) in
             switch result {
             case .success(let coins):
                 // cell, -> coin + coin 정보
@@ -73,7 +72,10 @@ extension ChartListViewController {
         //스토리보드를 나눠놨기 때문에 해당 스토리보드를 지정해줘야한다.
         let storyboard = UIStoryboard(name: "Chart", bundle: .main)
         if let chartDetailVC = storyboard.instantiateViewController(identifier: "ChartDetailViewController") as? ChartDetailViewController {
-            chartDetailVC.coinInfo = coinInfo
+//            chartDetailVC.coinInfo = coinInfo
+            
+            chartDetailVC.viewModel = ChartDetailViewModel(coinInfo: coinInfo, chartDatas: [], selectedPeriod: .day, changeHandler: { _ ,_ in
+            })
             navigationController?.pushViewController(chartDetailVC, animated: true)
         }
     }

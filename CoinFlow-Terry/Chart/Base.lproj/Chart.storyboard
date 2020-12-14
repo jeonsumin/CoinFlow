@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybS-nn-1L9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CY1-jY-mjo">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -301,9 +301,23 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4q-Hq-xed">
                                 <rect key="frame" x="0.0" y="558" width="414" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHn-if-e3m" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="C2D-Pp-3y2"/>
+                                            <constraint firstAttribute="width" constant="374" id="tdV-R7-GL0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="KHn-if-e3m" firstAttribute="leading" secondItem="G4q-Hq-xed" secondAttribute="leading" constant="20" id="9rn-1d-516"/>
+                                    <constraint firstAttribute="trailing" secondItem="KHn-if-e3m" secondAttribute="trailing" constant="20" id="Kex-iR-8ZG"/>
+                                    <constraint firstItem="KHn-if-e3m" firstAttribute="top" secondItem="G4q-Hq-xed" secondAttribute="top" id="r8k-Rw-sTj"/>
                                     <constraint firstAttribute="height" constant="200" id="u9p-q5-Lmd"/>
+                                    <constraint firstAttribute="bottom" secondItem="KHn-if-e3m" secondAttribute="bottom" id="wqU-bW-vkf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -323,6 +337,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="VnY-et-vsO"/>
                     <connections>
+                        <outlet property="chartView" destination="KHn-if-e3m" id="Zh4-li-or3"/>
                         <outlet property="coinTypeLabel" destination="zMN-iW-fwU" id="dta-Gv-9BM"/>
                         <outlet property="currentPriceLabel" destination="1cY-SD-IPZ" id="4qi-R5-KUN"/>
                         <outlet property="heighlightBarLeading" destination="rSh-kq-V1a" id="tcl-1v-Ufg"/>

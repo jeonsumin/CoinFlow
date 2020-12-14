@@ -11,49 +11,61 @@ import Charts
 typealias coinChartInfo = (key: Period, value: [ChartData])
 class ChartDetailViewController: UIViewController {
     
-    var coinInfo : CoinInfo!
-    
-    //period, chart data
-    var chartDatas: [coinChartInfo] = [] {
-        didSet {
-            
-        }
-    }
-    
-    var selectedPeriod: Period = .day
-    
     @IBOutlet weak var coinTypeLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
     @IBOutlet weak var highlightBar: UIView!
     @IBOutlet weak var heighlightBarLeading: NSLayoutConstraint!
+    @IBOutlet weak var chartView: LineChartView!
+    
+    var viewModel :ChartDetailViewModel!
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateCoinInfo(coinInfo)
-        fetchData() // chart Data
+        updateCoinInfo(viewModel)
+        viewModel.updateNotify { chartDatas, selectedPeriod in
+            //rander
+            self.renderChart(with: chartDatas, period: selectedPeriod)
+        }
+        viewModel.fatchDate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        print("넘어온 데이터 ::: \(coinInfo.key)")
+        //        print("넘어온 데이터 ::: \(coinInfo.key)")
     }
     
     @IBAction func dailyButtonTapped(_ sender: UIButton) {
-        renderChart(with: .day)
+        viewModel.selectedPeriod = .day
+        let datas = viewModel.chartDatas
+        let selectedPeriod = viewModel.selectedPeriod
+        renderChart(with: datas, period: selectedPeriod)
+        
         moveHightlightBar(to: sender)
     }
     @IBAction func weeklyButtonTapped(_ sender: UIButton) {
-        renderChart(with: .week)
+        viewModel.selectedPeriod = .week
+        let datas = viewModel.chartDatas
+        let selectedPeriod = viewModel.selectedPeriod
+        renderChart(with: datas, period: selectedPeriod)
+        
         moveHightlightBar(to: sender)
     }
     @IBAction func monthlyButtonTapped(_ sender: UIButton) {
-        renderChart(with: .month)
+        viewModel.selectedPeriod = .month
+        let datas = viewModel.chartDatas
+        let selectedPeriod = viewModel.selectedPeriod
+        renderChart(with: datas, period: selectedPeriod)
+        
         moveHightlightBar(to: sender)
     }
     @IBAction func yearlyButtonTapped(_ sender: UIButton) {
-        renderChart(with: .year)
+        viewModel.selectedPeriod = .year
+        let datas = viewModel.chartDatas
+        let selectedPeriod = viewModel.selectedPeriod
+        renderChart(with: datas, period: selectedPeriod)
+        
         moveHightlightBar(to: sender)
     }
     
@@ -62,45 +74,120 @@ class ChartDetailViewController: UIViewController {
 
 //MARK: private Method
 extension ChartDetailViewController {
-    
-    private func fetchData(){
-        // TODO: 정보는 일단 다 가져와야 하고 어느 데이터가 먼저 오는지는 알 수 없어 4가지 데이터가 들어온 후에 차트에 렌더링 하기
-        
-        let dispatchGroup = DispatchGroup()
-        
-        
-        // Period 의 CaseIterable 프로퍼티를 통해서 allCases를 사용할 수 있는데 이를 통해 forEach로 day, week, month, year의 필요한 데이터를 호출 할 수 있다.
-        Period.allCases.forEach { period in
-            dispatchGroup.enter()
-            NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { (result) in
-                dispatchGroup.leave()
-                switch result {
-                case .success(let coinChartDatas):
-//                    print("--> coin Chart data Count ::: \(coinChartDatas.count)")
-                    self.chartDatas.append(coinChartInfo(key: period, value: coinChartDatas))
-                case .failure(let err):
-                    print("--> err::: \(err.localizedDescription)")
-                }
-            }
-        }
-        dispatchGroup.notify(queue: .main) {
-            // -> chart randering
-            print("render chart... \(self.chartDatas.count)")
-            self.renderChart(with: self.selectedPeriod)
-        }
-    }
-    
-    private func updateCoinInfo(_ coinInfo: CoinInfo) {
-        coinTypeLabel.text = "\(coinInfo.key)"
-        currentPriceLabel.text = String(format: "%.1f", coinInfo.value.usd.price)
+    private func updateCoinInfo(_ viewModel: ChartDetailViewModel) {
+        coinTypeLabel.text = "\(viewModel.coinInfo.key)"
+        currentPriceLabel.text = String(format: "%.1f", viewModel.coinInfo.value.usd.price)
     }
     
     private func moveHightlightBar(to button: UIButton){
         heighlightBarLeading.constant = button.frame.minX
     }
     
-    private func renderChart(with period: Period){
+    //TODO: 리팩토링 해보기 
+    private func renderChart(with chartDatas: [coinChartInfo], period: Period){
         //TODO: 선택된 Period로 차트 그리기
-        print("rendering....\(period)")
+        // 데이터 가져오기
+        // 차트에 필요한 차트데이터 가공
+        // 차트에 적용
+        
+        
+        // 데이터 가져오기
+        guard let coinChartData = chartDatas.first(where: { $0.key == period })?.value else { return }
+        // 차트에 필요한 차트데이터 가공
+        
+        let chartDataEntry = coinChartData.map { chartData -> ChartDataEntry in
+            let time = chartData.time
+            let price = chartData.closePrice
+            return ChartDataEntry(x: time, y: price)
+        }
+        
+        // 차트에 적용
+        
+        // Configure Dataset(how to draw)
+        let lineChartDataSet = LineChartDataSet(entries: chartDataEntry, label: "Coin Value")
+        
+        // -- draw mode
+        lineChartDataSet.mode = .horizontalBezier
+        // -- color
+        lineChartDataSet.colors = [UIColor.systemBlue]
+        // -- draw circle
+        lineChartDataSet.drawCirclesEnabled = false
+        lineChartDataSet.drawCircleHoleEnabled = false
+        // -- draw y value
+        lineChartDataSet.drawValuesEnabled = false
+        // -- highlight when user touch
+        lineChartDataSet.highlightEnabled = true
+        lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
+        lineChartDataSet.highlightColor = UIColor.systemBlue
+        
+        // LineChartDataSet, [ChartDataEntry]
+        
+        let data = LineChartData(dataSet: lineChartDataSet)
+        chartView.data = data
+        
+        // Gradient fill
+        let startColor = UIColor.systemBlue
+        let endColor = UIColor(white: 1, alpha: 0.3)
+        
+        let gradientColors = [startColor.cgColor, endColor.cgColor] as CFArray // Colors of the gradient
+        let colorLocations: [CGFloat] = [1.0, 0.0] // Positioning of the gradient
+        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) // Gradient Object
+        lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0) // Set the Gradient
+        lineChartDataSet.drawFilledEnabled = true // Draw the Gradient
+        
+        // Axis - xAxis
+        let xAxis = chartView.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.valueFormatter = xAxisDateFormatter(period: period)
+        xAxis.drawGridLinesEnabled = false
+        xAxis.drawAxisLineEnabled = true
+        xAxis.drawLabelsEnabled = true
+        
+        // Axis - yAxis
+        let leftYAxis = chartView.leftAxis
+        leftYAxis.drawGridLinesEnabled = false
+        leftYAxis.drawAxisLineEnabled = false
+        leftYAxis.drawLabelsEnabled = false
+        
+        let rightYAxis = chartView.rightAxis
+        rightYAxis.drawGridLinesEnabled = false
+        rightYAxis.drawAxisLineEnabled = false
+        rightYAxis.drawLabelsEnabled = false
+        
+        // User InterAction
+        chartView.doubleTapToZoomEnabled = false
+        chartView.dragEnabled = true
+        
+        chartView.delegate = self
+        
+        // Chart Description
+        let description = Description()
+        description.text = ""
+        chartView.chartDescription = description
+        
+        // Legend
+        let legend = chartView.legend
+        legend.enabled = false
     }
 }
+
+
+extension ChartDetailViewController {
+    private func xAxisDateFormatter(period: Period) -> IAxisValueFormatter {
+        switch period {
+        case .day: return ChartXAxisDayFormatter()
+        case .week: return ChartXAxisWeekFormatter()
+        case .month: return ChartXAxisMonthFormatter()
+        case .year: return ChartXAxisYearFormatter()
+        }
+    }
+}
+
+extension ChartDetailViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        print(#function, entry.x, entry.y, highlight)
+        currentPriceLabel.text = String(format: "%.1f", entry.y)
+    }
+}
+
+
