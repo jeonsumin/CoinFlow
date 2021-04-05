@@ -21,7 +21,7 @@ class ChartListViewController: UIViewController {
             // coinInfoList 가 세팅이 되었을때 -> tableView reload()
             DispatchQueue.main.async {
                 self.chartTableView.reloadData()
-                self.adjustTableViewHeight() // 데이터가 들어왔으므로 height 재정의
+                
             }
         }
     }
@@ -52,17 +52,13 @@ class ChartListViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        adjustTableViewHeight()
+        
     }
 }
 
 //MARK:- Priavte Method
 extension ChartListViewController {
     
-    //scrollView에 tableView올려 높이를 지정하니 필요없는 여백이 생겼음 이 시점에 테이블 뷰 contentsize 파악 후 , tableView 높이를 조정
-    private func adjustTableViewHeight(){
-        chartTableViewHeight.constant = chartTableView.contentSize.height
-    }
     
     private func showDetail(coinInfo : CoinInfo){
         //TODO:- Detail view로 푸쉬하자
